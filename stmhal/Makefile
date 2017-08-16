@@ -1,6 +1,6 @@
 # Select the board to build for: if not given on the command line,
 # then default to PYBV10.
-BOARD ?= PYBV10
+BOARD ?= STM32F4_CloudBlock
 ifeq ($(wildcard boards/$(BOARD)/.),)
 $(error Invalid BOARD specified)
 endif
@@ -37,7 +37,7 @@ STFLASH ?= st-flash
 OPENOCD ?= openocd
 OPENOCD_CONFIG ?= boards/openocd_stm32f4.cfg
 
-CROSS_COMPILE = arm-none-eabi-
+CROSS_COMPILE = /tools/gcc-arm-none-eabi-5_4-2016q3/bin/arm-none-eabi-
 
 INC += -I.
 INC += -I$(TOP)
